@@ -1,8 +1,8 @@
-package com.adityasinha.projects.springstarter.dao.impl;
+package com.adityasinha.projects.managefinance.dao.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.adityasinha.projects.springstarter.dao.PortfolioDao;
+import com.adityasinha.projects.managefinance.dao.PortfolioDao;
 
 @Service
 public class PortfolioDaoImpl implements PortfolioDao{

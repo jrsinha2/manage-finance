@@ -1,0 +1,39 @@
+package com.adityasinha.projects.managefinance.controller;
+
+import com.adityasinha.projects.managefinance.model.User;
+import com.adityasinha.projects.managefinance.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@Slf4j
+@RequestMapping("/user")
+public class UserController {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    /** saves a new user in db.
+     * @param user new user's json body
+     * @return response msg with new user's id
+     */
+    @PostMapping("/addUser")
+    public String saveUser(@RequestBody User user){
+        log.info("adding user {}", user);
+        userRepository.save(user);
+        log.info("added user with id {}",user.getId());
+        return ResponseConstants.ADDED_USER + user.getId();
+    }
+
+
+    /** returns list of all users.
+     * @return list of users
+     */
+    @GetMapping("/getUsers")
+    public List<User> getUsers(){
+        return userRepository.findAll();
+    }
+}

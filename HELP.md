@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.adityasinha.projects.spring-starter' is invalid and this project uses 'com.adityasinha.projects.springstarter' instead.
+* The original package name 'com.adityasinha.projects.spring-starter' is invalid and this project uses 'com.adityasinha.projects.managefinance' instead.
 
 # Getting Started
 

@@ -1,7 +1,8 @@
-package com.adityasinha.projects.springstarter.controller;
+package com.adityasinha.projects.managefinance.controller;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,13 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import com.adityasinha.projects.springstarter.dao.PortfolioDao;
+import com.adityasinha.projects.managefinance.dao.PortfolioDao;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class ControllerTest {
+@Tag("integration")
+public class ControllerIt {
     
     @Autowired
     private MockMvc mockMvc;

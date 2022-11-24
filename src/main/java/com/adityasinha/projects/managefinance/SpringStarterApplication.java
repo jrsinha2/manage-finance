@@ -1,9 +1,9 @@
-package com.adityasinha.projects.springstarter;
+package com.adityasinha.projects.managefinance;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.adityasinha.projects.managefinance")
 public class SpringStarterApplication {
 
 	public static void main(String[] args) {

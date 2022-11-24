@@ -1,4 +1,4 @@
-package com.adityasinha.projects.springstarter.dao;
+package com.adityasinha.projects.managefinance.dao;
 
 public interface PortfolioDao {
 

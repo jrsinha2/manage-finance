@@ -1,4 +1,4 @@
-package com.adityasinha.projects.springstarter;
+package com.adityasinha.projects.managefinance;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
