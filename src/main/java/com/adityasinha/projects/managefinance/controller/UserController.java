@@ -1,7 +1,7 @@
 package com.adityasinha.projects.managefinance.controller;
 
 import com.adityasinha.projects.managefinance.model.User;
-import com.adityasinha.projects.managefinance.repository.UserRepository;
+import com.adityasinha.projects.managefinance.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     /** saves a new user in db.
      * @param user new user's json body
@@ -23,7 +23,7 @@ public class UserController {
     @PostMapping("/addUser")
     public String saveUser(@RequestBody User user){
         log.info("adding user {}", user);
-        userRepository.save(user);
+        userService.addUser(user);
         log.info("added user with id {}",user.getId());
         return ResponseConstants.ADDED_USER + user.getId();
     }
@@ -34,6 +34,6 @@ public class UserController {
      */
     @GetMapping("/getUsers")
     public List<User> getUsers(){
-        return userRepository.findAll();
+        return userService.getAllUsers();
     }
 }

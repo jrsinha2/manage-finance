@@ -11,7 +11,4 @@ public class Investment extends Transaction{
 
     private InvestmentType type;
 
-     enum InvestmentType {
-         STOCK, MUTUAL_FUND, FIXED_DEPOSIT, ELSS;
-     }
 }

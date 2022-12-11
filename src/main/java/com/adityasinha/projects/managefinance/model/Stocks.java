@@ -3,20 +3,15 @@ package com.adityasinha.projects.managefinance.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-import java.time.LocalDateTime;
-
 @Data
-public class Transaction {
-
+public class Stocks {
     @Id
-    private String transactionId;
-
     private String userId;
-
-    private double amount;
-
+    private int instrumentId;
     private String name;
-
-    private LocalDateTime transactionTs;
+    private String sector;
+    private int quantity;
+    private double avgBoughtPrice;
+    private double lastTradedPrice;
 
 }
