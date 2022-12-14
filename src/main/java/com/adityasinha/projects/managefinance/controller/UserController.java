@@ -4,6 +4,8 @@ import com.adityasinha.projects.managefinance.model.User;
 import com.adityasinha.projects.managefinance.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,9 +40,9 @@ public class UserController {
 
 
     @PostMapping("/signIn")
-    public Boolean signIn(@RequestBody User user){
+    public ResponseEntity<Boolean> signIn(@RequestBody User user){
         log.info("signing In", user);
         boolean isOk = userService.logIn(user);
-        return isOk;
+        return new ResponseEntity<>(isOk, isOk ? HttpStatus.OK : HttpStatus.UNAUTHORIZED);
     }
 }

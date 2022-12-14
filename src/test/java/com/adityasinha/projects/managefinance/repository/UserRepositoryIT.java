@@ -6,6 +6,7 @@ import com.adityasinha.projects.managefinance.model.User;
 import com.mongodb.assertions.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import java.util.Optional;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = {DatabaseConfig.class, UserRepository.class, ApplicationProperties.class})
 @EnableConfigurationProperties(ApplicationProperties.class)
+@Tag("integration")
 class UserRepositoryIT {
 
 
