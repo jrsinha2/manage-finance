@@ -24,8 +24,7 @@ public class UserController {
     public String saveUser(@RequestBody User user){
         log.info("adding user {}", user);
         userService.addUser(user);
-        log.info("added user with id {}",user.getId());
-        return ResponseConstants.ADDED_USER + user.getId();
+        return ResponseConstants.ADDED_USER;
     }
 
 
@@ -35,5 +34,13 @@ public class UserController {
     @GetMapping("/getUsers")
     public List<User> getUsers(){
         return userService.getAllUsers();
+    }
+
+
+    @PostMapping("/signIn")
+    public Boolean signIn(@RequestBody User user){
+        log.info("signing In", user);
+        boolean isOk = userService.logIn(user);
+        return isOk;
     }
 }

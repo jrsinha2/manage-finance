@@ -12,13 +12,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class User {
 
-    @Id
-    @JsonProperty("id")
-    private String id;
 
     @JsonProperty("fullName")
     private String fullName;
 
+    @Id
     @JsonProperty("email")
     @NonNull
     private String email;

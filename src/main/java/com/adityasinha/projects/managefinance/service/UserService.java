@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class UserService {
@@ -15,12 +14,18 @@ public class UserService {
     private UserRepository userRepository;
 
     public void addUser(User user){
-        user.setId(UUID.randomUUID().toString());
         userRepository.save(user);
     }
 
-
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    public User findUser(String email) {
+        return userRepository.findById(email).orElse(null);
+    }
+
+    public boolean logIn(User user) {
+        return userRepository.findByEmailAndPassword(user.getEmail(),user.getPassword()).isPresent();
     }
 }
