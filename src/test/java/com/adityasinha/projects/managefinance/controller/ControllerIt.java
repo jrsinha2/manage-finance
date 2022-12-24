@@ -48,7 +48,7 @@ public class ControllerIt {
             .contentType(MediaType.APPLICATION_JSON)
              
         ).andExpect(MockMvcResultMatchers.status().isOk());
-        Assertions.assertFalse(portfolioDao.getDatabaseHealth());
+        Assertions.assertEquals("manage_finance",portfolioDao.getDatabaseHealth());
     }
 
     @Test

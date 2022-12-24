@@ -26,7 +26,7 @@ public class Controller {
     }
 
     @GetMapping("/getDbHealth")
-    public Boolean getDatabaseHealth(){
+    public String getDatabaseHealth(){
         return portfolioDao.getDatabaseHealth();
     }
 
